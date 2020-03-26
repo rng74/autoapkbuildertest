@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">apkbuild</string>
+    <string name="helloworld">HELLO WORLD!</string>
+</resources>
