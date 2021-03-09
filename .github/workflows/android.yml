@@ -21,10 +21,12 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
       - name: Delete
-        uses: ame-yu/action-delete-latest-release@v2
+        uses: dev-drprasad/delete-older-releases@v0.1.0
         with:
           github_token: ${{ secrets.TOKEN }}
-          delete_pattern: Pre-Release
+          delete_tag_pattern: Pre-Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - name: Releasing using Hub
         uses: sleepingknights/autorelease@master
         env:
