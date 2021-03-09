@@ -24,10 +24,11 @@ jobs:
         uses: ame-yu/action-delete-latest-release@v2
         with:
           github_token: ${{ secrets.TOKEN }}
+          delete_pattern: Pre-Release
       - name: Releasing using Hub
         uses: sleepingknights/autorelease@master
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           APP_FOLDER: app
-          RELEASE_TITLE: New Build
+          RELEASE_TITLE: Pre-Release
 
