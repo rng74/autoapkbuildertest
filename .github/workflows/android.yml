@@ -21,7 +21,7 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
       - name: Delete
-        uses: dev-drprasad/delete-older-releases@v0.1.0
+        uses: dev-drprasad/delete-older-releases@v0.2.0
         with:
           keep_latest: 0
           delete_tags: true
