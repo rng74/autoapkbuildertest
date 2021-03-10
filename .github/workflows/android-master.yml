@@ -20,12 +20,6 @@ jobs:
         run: ./gradlew build
       - name: Build Debug APK
         run: ./gradlew assembleDebug
-        with:
-          keep_latest: 0
-          delete_tags: true
-          delete_tag_pattern: Pre-Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - name: Releasing using Hub
         uses: rng/autorelease@master
         env:
