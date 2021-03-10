@@ -2,7 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
@@ -20,8 +20,6 @@ jobs:
         run: ./gradlew build
       - name: Build Debug APK
         run: ./gradlew assembleDebug
-      - name: Delete
-        uses: dev-drprasad/delete-older-releases@v0.2.0
         with:
           keep_latest: 0
           delete_tags: true
@@ -29,7 +27,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
       - name: Releasing using Hub
-        uses: sleepingknights/autorelease@master
+        uses: rng/autorelease@master
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           APP_FOLDER: app
